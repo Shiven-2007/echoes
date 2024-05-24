@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shalimar&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+
+}
+
+
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('/photos/bg.png');
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center center;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.5px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+body::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #00000054;
+    z-index: -1;
+}
+
+.mainContent{
+    height: 80%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 25px;
+    background: #00000033;
+    backdrop-filter: blur(10px);
+    border: 2px solid #FFFFFF33;
+    gap: 10px;
+}
+
+.heading{
+    font-family: "Shalimar",cursive;
+    color: white;
+    font-size: 150px;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+}
+.heading img{
+    width: 110px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.instructions{
+    font-family: "Inter",sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    text-align: center;
+    width: 70%;
+    color: white;
+    opacity: 0.7;
+}
+
+#qrcode{
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+    padding: 0.5em;
+    background: white;
+    opacity: 0.7;
+    border-radius: 10px;
+}
+
+#qrcode img{
+    width: 100%;
+    height: 100%;
+}
+
+#roomid{
+    margin-top: 15px;
+    font-size: 1.1em;
+}

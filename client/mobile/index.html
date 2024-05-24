@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="phoneTitle"></div>
+		<div class="notification1 notification">
+			<div class="notificationIcon">
+				<img src="/photos/messages.png" />
+			</div>
+			<div class="notificationContent" id="notification">
+				<div class="notificationTitle">Mom</div>
+				<div class="notificationText">
+					Every place has its ghosts. Why do you ask?
+				</div>
+			</div>
+			<div class="notificationTime">Just now</div>
+		</div>
+		<div class="notification2 notification">
+			<div class="notificationIcon">
+				<img src="/photos/messages.png" />
+			</div>
+			<div class="notificationContent" id="notification">
+				<div class="notificationTitle">girl from the rock show</div>
+				<div class="notificationText">
+					Sometimes shadows are all that's left at the end...
+				</div>
+			</div>
+			<div class="notificationTime">Just now</div>
+		</div>
+		<div class="notification3 notification">
+			<div class="notificationIcon">
+				<img src="/photos/messages.png" />
+			</div>
+			<div class="notificationContent" id="notification">
+				<div class="notificationTitle">Kevin</div>
+				<div class="notificationText">
+					Efficiency over experience. But what did you miss al...
+				</div>
+			</div>
+			<div class="notificationTime">Just now</div>
+		</div>
+		<div class="dateAndTime">
+			<div class="time" id="time"></div>
+			<div class="date" id="date"></div>
+		</div>
+		<div class="momChat page chatPage chat">
+			<div class="chatHeader">
+				<div class="backButton">
+					<img src="/photos/back.svg" />
+				</div>
+				<div class="contactPerson">
+					<div class="contactImage">
+						<img src="/photos/logo.png" />
+					</div>
+					<div class="contactName">Mom</div>
+				</div>
+				<div></div>
+			</div>
+			<div class="chatMessages">
+				<div class="yourMessage">
+					Ever feel like our house is more like a museum lately?
+				</div>
+			</div>
+		</div>
+		<div class="rockGirlChat page chatPage chat">
+			<div class="chatHeader">
+				<div class="backButton">
+					<img src="/photos/back.svg" />
+				</div>
+				<div class="contactPerson">
+					<div class="contactImage">
+						<img src="/photos/logo.png" />
+					</div>
+					<div class="contactName">girl from the rock show</div>
+				</div>
+				<div></div>
+			</div>
+			<div class="chatMessages">
+				<div class="yourMessage">
+					Ever wonder if shadows grow longer just before sunset?
+				</div>
+			</div>
+		</div>
+		<div class="kevinChat page chatPage chat">
+			<div class="chatHeader">
+				<div class="backButton">
+					<img src="/photos/back.svg" />
+				</div>
+				<div class="contactPerson">
+					<div class="contactImage">
+						<img src="/photos/logo.png" />
+					</div>
+					<div class="contactName">kevin</div>
+				</div>
+				<div></div>
+			</div>
+			<div class="chatMessages">
+				<div class="yourMessage">
+					Chose the highway instead of the scenic route. Faster, gets you there
+					without the distractions.
+				</div>
+			</div>
+		</div>
+		<div class="chatPage page allChats">
+			<div class="chatHeader">
+				<div class="phoneTopHeader">
+					<div class="timeHeader"></div>
+					<div class="iconsHeader">
+						<img src="/photos/cellular.svg" />
+						<img src="/photos/wifi.svg" />
+						<img src="/photos/battery100.svg" />
+					</div>
+				</div>
+				<div class="backButton">
+					<img src="/photos/back.svg" />
+					Home
+				</div>
+				<div class="heading">Chats</div>
+			</div>
+			<div class="chatBody">
+				<div class="chatContact">
+					<div class="contactImage" style="background: #ff2727">
+						<img src="/photos/logo.png" />
+					</div>
+					<div class="contactName">mom</div>
+					<div class="chatMessageTime">Yesterday</div>
+					<div class="chatMessageContent">
+						You: Ever feel like our house is more like a museum lately?
+					</div>
+				</div>
+				<div class="chatContact">
+					<div class="contactImage" style="background: #f3be00">
+						<img src="/photos/logo.png" />
+					</div>
+					<div class="contactName">girl from the rock show</div>
+					<div class="chatMessageTime">Today</div>
+					<div class="chatMessageContent">
+						You: Ever wonder if shadows grow longer just before sunset?
+					</div>
+				</div>
+				<div class="chatContact">
+					<div class="contactImage" style="background: #4eba28">
+						<img src="/photos/logo.png" />
+					</div>
+					<div class="contactName">kevin</div>
+					<div class="chatMessageTime">Today</div>
+					<div class="chatMessageContent">
+						You: Chose the highway instead of the scenic route. Faster, gets you
+						there without...
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hotbar">
+			<img src="/photos/messages.png" />
+		</div>
+	</body>
+	<script
+		src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+		integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+		crossorigin="anonymous"
+	></script>
+	<script type="module" src="app.js"></script>
+	<!-- <script>
+		const roomid = window.location.pathname.split("/")[2];
+		const socket = io();
+		socket.emit("create", roomid);
+		document.getElementById("room").innerText = roomid;
+
+		socket.on("mynotification", async (id) => {
+			setTimeout(() => {
+				document.getElementById("notification").innerHTML =
+					"this came after 5 seconds, room id" + id;
+				alert("This alert came on the phone after 5 seconds");
+			}, 5000);
+		});
+	</script> -->
+</html>

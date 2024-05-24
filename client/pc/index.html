@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+			integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script defer type="module" src="app.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="left">Echoes</div>
+			<div class="right">
+				<div class="menuItem">
+					<img src="/photos/wifi.svg" />
+				</div>
+				<div class="menuItem">
+					<img src="/photos/battery100.svg" />
+				</div>
+				<div class="menuItem">
+					<img src="/photos/switch.svg" />
+				</div>
+				<div class="menuItem" id="date"></div>
+				<div class="menuItem" id="time"></div>
+			</div>
+		</div>
+		<div class="photosApp parent hidden">
+			<div class="title" id="photosAppTitle">
+				<div class="redlight">
+					<div class="red close">
+						<img src="/photos/cross.svg" />
+					</div>
+					<div class="yellow"></div>
+					<div class="green"></div>
+				</div>
+				<div class="titleText">Photos</div>
+			</div>
+			<div class="photosContainer">
+				<div class="sidebar">
+					<div>Navigation</div>
+					<div>
+						<svg
+							width="15"
+							height="13"
+							viewBox="0 0 15 13"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M1.99316 12.186H12.9746C14.3076 12.186 14.9678 11.5259 14.9678 10.2183V2.46777C14.9678 1.16016 14.3076 0.5 12.9746 0.5H1.99316C0.666504 0.5 0 1.15381 0 2.46777V10.2183C0 11.5322 0.666504 12.186 1.99316 12.186ZM1.02197 2.51855C1.02197 1.8584 1.37109 1.52197 2.00586 1.52197H12.9619C13.5903 1.52197 13.9458 1.8584 13.9458 2.51855V2.63281H1.02197V2.51855ZM2.00586 11.1641C1.37109 11.1641 1.02197 10.8276 1.02197 10.1675V3.52783H13.9458V10.1675C13.9458 10.8276 13.5903 11.1641 12.9619 11.1641H2.00586ZM2.72949 9.60254C2.72949 9.93262 2.95801 10.1548 3.29443 10.1548H11.6924C12.0288 10.1548 12.2573 9.93262 12.2573 9.60254V8.65039C12.2573 8.32031 12.0288 8.09814 11.6924 8.09814H3.29443C2.95801 8.09814 2.72949 8.32031 2.72949 8.65039V9.60254Z"
+								fill="#0A84FF"
+							/></svg
+						>nowhere to go
+					</div>
+				</div>
+				<div class="photosParent">
+					<div class="photos">
+						<div>
+							<img src="/photos/photo1.png" data-row="1" />
+						</div>
+						
+						<div><img src="/photos/photo2.png" data-row="1" /></div>
+						<div><img src="/photos/photo3.png" data-row="1" /></div>
+						<div><img src="/photos/photo4.png" data-row="1" /></div>
+						<div><img src="/photos/girl.png" data-row="2" /></div>
+						<div><img src="/photos/photo6.png" data-row="2" /></div>
+						<div><img src="/photos/photo7.png" data-row="2" /></div>
+						<div><img src="/photos/photo8.png" data-row="2" /></div>
+						<div><img src="/photos/photo9.png" data-row="3" /></div>
+						<div><img src="/photos/photo10.png" data-row="3" /></div>
+						<div><img src="/photos/photo11.png" data-row="3" /></div>
+						<div><img src="/photos/photo12.png" data-row="3" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<button class="photoIcon" id="photoIcon">
+			<img src="/photos/girl.png" />
+			<p>Photograph.jpeg</p>
+		</button>
+		<div class="photoWindow parent hidden" id="photoWindow">
+			<div class="title" id="photoWindowTitle">
+				<div class="redlight">
+					<div class="red close">
+						<img src="/photos/cross.svg" />
+					</div>
+					<div class="yellow"></div>
+					<div class="green"></div>
+				</div>
+			</div>
+			<img src="/photos/girl.png" class="mainImg" />
+		</div>
+		<div class="hotbar">
+			<img src="/photos/photos.png" id="photos" />
+
+			<img src="/photos/notes.png" />
+		</div>
+		<audio id="music1" src="/music/row1.mp3" loop></audio>
+		<audio id="music2" src="/music/row2.mp3" loop></audio>
+		<audio id="music3" src="/music/row3.mp3" loop></audio>
+	</body>
+
+	<script
+
+		src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+		integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+		crossorigin="anonymous"
+	></script>
+	
+
+	
+</html>
