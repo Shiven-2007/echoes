@@ -160,28 +160,8 @@ function startMomChats() {
 		"Might be. Some words need fresh air, space between them to make sense.",
 		"It's because of the scribbles I made, isn't it?",
 	];
-	const m1 = document.createElement("div");
-	m1.classList.add("theirMessage");
-	m1.innerHTML = "Every place has its ghosts. Why do you ask?";
-	chatpage.appendChild(m1);
-	let i = 0;
-	let interval = setInterval(() => {
-		if (i < messages.length) {
-			let message = document.createElement("div");
-			if (i % 2 == 0) {
-				message.classList.add("yourMessage");
-			} else {
-				message.classList.add("theirMessage");
-			}
-			message.innerHTML = messages[i];
-			chatpage.appendChild(message);
-			chatpage.scrollTo({ top: chatpage.scrollHeight, behavior: "smooth" })
-			i++;
-		} else {
-			addReadReceipt(chatpage);
-			clearInterval(interval);
-		}
-	}, 3000);
+	const m1 = "Every place has its ghosts. Why do you ask?";
+	startChats(chatpage, messages, m1);
 }
 
 function startRockGirlChats() {
@@ -197,29 +177,8 @@ function startRockGirlChats() {
 		"You mean like your home? That mirror has been cracked a while.",
 		"Cracks spread, don't they? All the way through the glass.",
 	];
-	const m1 = document.createElement("div");
-	m1.classList.add("theirMessage");
-	m1.innerHTML =
-		"Sometimes shadows are all that's left at the end of the day. Why?";
-	chatpage.appendChild(m1);
-	let i = 0;
-	let interval = setInterval(() => {
-		if (i < messages.length) {
-			let message = document.createElement("div");
-			if (i % 2 == 0) {
-				message.classList.add("yourMessage");
-			} else {
-				message.classList.add("theirMessage");
-			}
-			message.innerHTML = messages[i];
-			chatpage.appendChild(message);
-			chatpage.scrollTo({ top: chatpage.scrollHeight, behavior: "smooth" })
-			i++;
-		} else {
-			addReadReceipt(chatpage);
-			clearInterval(interval);
-		}
-	}, 3000);
+	const m1 = "Sometimes shadows are all that's left at the end of the day. Why?";
+	startChats(chatpage, messages, m1);
 }
 
 function startKevinChats() {
@@ -235,10 +194,17 @@ function startKevinChats() {
 		"Can't outrun what's inside. Got to face it, sooner or later.",
 		"I thought if I ran fast enough, far enough, I'd be someone new.",
 	];
+	
+	const m1="Efficiency over experience. But what did you miss along the way?";
+	startChats(chatpage, messages, m1);
+}
+	
+
+
+function startChats(chatpage, messages, message1) {
 	const m1 = document.createElement("div");
 	m1.classList.add("theirMessage");
-	m1.innerHTML =
-		"Efficiency over experience. But what did you miss along the way?";
+	m1.innerHTML = message1;
 	chatpage.appendChild(m1);
 	let i = 0;
 	let interval = setInterval(() => {
@@ -251,6 +217,7 @@ function startKevinChats() {
 			}
 			message.innerHTML = messages[i];
 			chatpage.appendChild(message);
+			animateMessage(chatpage.lastChild);
 			chatpage.scrollTo({ top: chatpage.scrollHeight, behavior: "smooth" })
 			i++;
 		} else {
@@ -260,11 +227,16 @@ function startKevinChats() {
 	}, 3000);
 }
 
+
+
+
 function addReadReceipt(chatpage) {
 	const readReceipt = document.createElement("div");
 	readReceipt.classList.add("readReceipt");
 	readReceipt.innerHTML = "Read 9:41 PM";
 	chatpage.appendChild(readReceipt);
+	animateMessage(chatpage.lastChild);
+	chatpage.scrollTo({ top: chatpage.scrollHeight, behavior: "smooth" })
 }
 
 
@@ -289,6 +261,17 @@ function showPage(targetPage, currentPage) {
 function hidePage(page) {
 	animate(page,{
 		x: ["0%", "100%"],
+	},{
+		duration: 0.5,
+		easing: [0.16, 1, 0.3, 1],
+	})
+}
+
+
+function animateMessage(message){
+	animate(message,{
+		opacity: [0, 1],
+		y: [20, 0],
 	},{
 		duration: 0.5,
 		easing: [0.16, 1, 0.3, 1],

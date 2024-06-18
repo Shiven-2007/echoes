@@ -26,6 +26,7 @@ body {
 	overflow: hidden;
 	padding-top: 20vh;
 }
+
 body::after {
 	content: "";
 	position: absolute;
@@ -43,6 +44,7 @@ body::after {
 	color: white;
 	flex-direction: column;
 }
+
 #time {
 	font-size: 80px;
 	font-weight: 600;
@@ -337,6 +339,22 @@ body::after {
 	height: fit-content;
 	justify-self: end;
 	border-radius: 18px;
+	position: relative;
+}
+
+
+.chatMessages > .yourMessage:after{
+	content: url("/photos/yourTail.svg");
+	position: absolute;
+	bottom: -5px;
+	right: -5px;
+}
+
+.chatMessages > .theirMessage:after{
+	content: url("/photos/theirTail.svg");
+	position: absolute;
+	bottom: -5px;
+	left: -5px;
 }
 
 .chatMessages > .theirMessage {
@@ -347,6 +365,7 @@ body::after {
 	height: fit-content;
 	justify-self: start;
 	border-radius: 18px;
+	position: relative;
 }
 
 .readReceipt{
